@@ -326,7 +326,7 @@ function allItlFood() {
 // and finally all ingredients all together and randomized
 const allDish = document.getElementById("all");
 allDish.addEventListener("click", fixMyDish);
-
+//  since we can't return multiple functions I'll divide up outcomes below
 function fixMyDish() {
   console.log("fix my dish");
   switch (Math.floor(Math.random() * 9)) {
@@ -351,6 +351,8 @@ function fixMyDish() {
   }
 }
 
+// divide  up the random outcomes to randomly different categories
+
 function rndmOne() {
   rndmMEXCheese();
   rndmItlSauce();
@@ -360,7 +362,6 @@ function rndmOne() {
 function rndmTwo() {
   rndmMEXCheese();
   rndmMexSauce();
-
   rndmItlStarch();
   rndmItlMeat();
 }
@@ -371,7 +372,7 @@ function rndmThree() {
   rndmItlMeat();
 }
 function rndmFour() {
-  rndmMEXCheese();
+  rndmITLCheese();
   rndmMexStarch();
   rndmItlSauce();
   rndmItlMeat();
