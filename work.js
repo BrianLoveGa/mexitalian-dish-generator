@@ -25,7 +25,7 @@ sauce.innerHTML = "";
 cheese.innerHTML = "";
 
 // grab the buttons - give em functions work from bottom up
-
+// start with change the cheese cycle through only the italian options
 const itCheese = document.getElementById("itlCheese");
 itCheese.addEventListener("click", rndmITLCheese);
 
@@ -55,7 +55,117 @@ function itlRndmCheese() {
       return "Asiago";
   }
 }
+// start with change the cheese cycle through only the mexican options
+const mexCheese = document.getElementById("mex-cheese");
+mexCheese.addEventListener("click", rndmMEXCheese);
 
+function rndmMEXCheese() {
+  cheese.innerHTML = mexRndmCheese();
+}
+
+function mexRndmCheese() {
+  switch (Math.floor(Math.random() * 9)) {
+    case 0:
+      return "Queso Añejo";
+    case 1:
+      return "Queso Fresco";
+    case 2:
+      return "Cotija";
+    case 3:
+      return "Queso Panela";
+    case 4:
+      return "Asadero";
+    case 5:
+      return "Queso De Oxaca";
+    case 6:
+      return "Queso Blanco";
+    case 7:
+      return "Requeson";
+    case 8:
+      return "Crema Mexicana";
+  }
+}
+// use the previous functions to pick mexican or italian cheese
+const allCheese = document.getElementById("all-cheese");
+allCheese.addEventListener("click", randoCheese);
+
+function randoCheese() {
+  switch (Math.floor(Math.random() * 2)) {
+    case 0:
+      return rndmMEXCheese();
+    case 1:
+      return rndmITLCheese();
+  }
+}
+
+// now for the sauces
+// again we will start south with mexican ones
+const mexSauce = document.getElementById("mex-sauce");
+mexSauce.addEventListener("click", rndmMexSauce);
+
+function rndmMexSauce() {
+  sauce.innerHTML = mexRndmSauce();
+}
+
+function mexRndmSauce() {
+  switch (Math.floor(Math.random() * 6)) {
+    case 0:
+      return "Guacamole";
+    case 1:
+      return "Pico de gallo";
+    case 2:
+      return "Red Salsa";
+    case 3:
+      return "Salsa Verde";
+    case 4:
+      return "Green Chili";
+    case 5:
+      return "Enchilada sauce";
+  }
+}
+
+// now italian sauce
+const itlSauce = document.getElementById("itl-sauce");
+itlSauce.addEventListener("click", rndmItlSauce);
+
+function rndmItlSauce() {
+  sauce.innerHTML = itlRndmSauce();
+}
+
+function itlRndmSauce() {
+  switch (Math.floor(Math.random() * 6)) {
+    case 0:
+      return "Carbonara";
+    case 1:
+      return "Bolognese";
+    case 2:
+      return "Pesto";
+    case 3:
+      return "Marinara";
+    case 4:
+      return "Alfredo";
+    case 5:
+      return "Red Clam sauce";
+  }
+}
+
+// now all sauces together
+
+const allSauce = document.getElementById("all-sauce");
+allSauce.addEventListener("click", randoSauce);
+
+function randoSauce() {
+  switch (Math.floor(Math.random() * 2)) {
+    case 0:
+      return rndmMexSauce();
+    case 1:
+      return rndmItlSauce();
+  }
+}
+
+// now starch
+
+// and finnaly all ingedeints all together and random
 const allDish = document.getElementById("all");
 allDish.addEventListener("click", fixMyDish);
 
