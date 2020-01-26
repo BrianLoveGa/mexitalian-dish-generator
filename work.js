@@ -163,9 +163,72 @@ function randoSauce() {
   }
 }
 
-// now starch
+// now starches
 
-// and finnaly all ingedeints all together and random
+const mexStarch = document.getElementById("mex-starch");
+mexStarch.addEventListener("click", rndmMexStarch);
+
+function rndmMexStarch() {
+  starch.innerHTML = mexRndmStarch();
+}
+
+function mexRndmStarch() {
+  switch (Math.floor(Math.random() * 6)) {
+    case 0:
+      return "on top of hard flour tortillas";
+    case 1:
+      return "on top of soft corn tortillas";
+    case 2:
+      return "on top of soft flour tortillas";
+    case 3:
+      return "on top of hard corn tortillas";
+    case 4:
+      return "rolled inside of soft flour tortillas";
+    case 5:
+      return "rolled inside of soft corn tortillas";
+  }
+}
+
+// italian pasta / starch
+
+const itlStarch = document.getElementById("itl-starch");
+itlStarch.addEventListener("click", rndmItlStarch);
+
+function rndmItlStarch() {
+  starch.innerHTML = itlRndmStarch();
+}
+
+function itlRndmStarch() {
+  switch (Math.floor(Math.random() * 6)) {
+    case 0:
+      return "on top of spaghetti noodles";
+    case 1:
+      return "on top of fettucini noodles";
+    case 2:
+      return "on top of ziti noodles";
+    case 3:
+      return "on top of angel hair noodles";
+    case 4:
+      return "on top of pappardelle noodles";
+    case 5:
+      return "on top of fusilli lunghi noodles";
+  }
+}
+
+// and now both starches together
+const allStarch = document.getElementById("all-starch");
+allStarch.addEventListener("click", randoStarch);
+
+function randoStarch() {
+  switch (Math.floor(Math.random() * 2)) {
+    case 0:
+      return rndmMexStarch();
+    case 1:
+      return rndmItlStarch();
+  }
+}
+
+// and finally all ingredients all together and randomized
 const allDish = document.getElementById("all");
 allDish.addEventListener("click", fixMyDish);
 
