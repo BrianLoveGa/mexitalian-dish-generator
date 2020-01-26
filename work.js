@@ -227,6 +227,101 @@ function randoStarch() {
       return rndmItlStarch();
   }
 }
+// DA MEATS
+
+const mexMeat = document.getElementById("mex-meat");
+mexMeat.addEventListener("click", rndmMexMeat);
+
+function rndmMexMeat() {
+  meat.innerHTML = mexRndmMeat();
+}
+
+function mexRndmMeat() {
+  switch (Math.floor(Math.random() * 8)) {
+    case 0:
+      return "fried pulled pork";
+    case 1:
+      return "finely chopped beef steak";
+    case 2:
+      return "adobe chicken";
+    case 3:
+      return "carne asada";
+    case 4:
+      return "carnitas";
+    case 5:
+      return "chorizo";
+    case 6:
+      return "al pastor";
+    case 7:
+      return "barbacoa";
+  }
+}
+
+// italian meat
+const itlMeat = document.getElementById("itl-meat");
+itlMeat.addEventListener("click", rndmItlMeat);
+
+function rndmItlMeat() {
+  meat.innerHTML = itlRndmMeat();
+}
+
+function itlRndmMeat() {
+  switch (Math.floor(Math.random() * 8)) {
+    case 0:
+      return "prosciutto";
+    case 1:
+      return "pancetta";
+    case 2:
+      return "fried chicken";
+    case 3:
+      return "fried eggplant";
+    case 4:
+      return "porchetta";
+    case 5:
+      return "culatello";
+    case 6:
+      return "breasaola";
+    case 7:
+      return "barbacoa";
+  }
+}
+
+// rando meat - how often do you read that in code?
+
+const allMeat = document.getElementById("all-meat");
+allMeat.addEventListener("click", randoMeat);
+
+function randoMeat() {
+  switch (Math.floor(Math.random() * 2)) {
+    case 0:
+      return rndmMexMeat();
+    case 1:
+      return rndmItlMeat();
+  }
+}
+
+// seperate just mexican ingredients
+const onlyMex = document.getElementById("all-mex");
+onlyMex.addEventListener("click", allMexFood);
+
+function allMexFood() {
+  rndmMEXCheese();
+  rndmMexSauce();
+  rndmMexStarch();
+  rndmMexMeat();
+}
+
+// seperate just italian ingrediants
+
+const onlyItl = document.getElementById("all-itl");
+onlyItl.addEventListener("click", allItlFood);
+
+function allItlFood() {
+  rndmITLCheese();
+  rndmItlSauce();
+  rndmItlStarch();
+  rndmItlMeat();
+}
 
 // and finally all ingredients all together and randomized
 const allDish = document.getElementById("all");
@@ -234,4 +329,81 @@ allDish.addEventListener("click", fixMyDish);
 
 function fixMyDish() {
   console.log("fix my dish");
+  switch (Math.floor(Math.random() * 9)) {
+    case 0:
+      return rndmOne();
+    case 1:
+      return rndmTwo();
+    case 2:
+      return rndmThree();
+    case 3:
+      return rndmFour();
+    case 4:
+      return rndmFive();
+    case 5:
+      return rndmSix();
+    case 6:
+      return rndmSeven();
+    case 7:
+      return rndmEight();
+    case 8:
+      return rndmNine();
+  }
+}
+
+function rndmOne() {
+  rndmMEXCheese();
+  rndmItlSauce();
+  rndmItlStarch();
+  rndmItlMeat();
+}
+function rndmTwo() {
+  rndmMEXCheese();
+  rndmMexSauce();
+
+  rndmItlStarch();
+  rndmItlMeat();
+}
+function rndmThree() {
+  rndmMEXCheese();
+  rndmMexSauce();
+  rndmMexStarch();
+  rndmItlMeat();
+}
+function rndmFour() {
+  rndmMEXCheese();
+  rndmMexStarch();
+  rndmItlSauce();
+  rndmItlMeat();
+}
+function rndmFive() {
+  rndmMexStarch();
+  rndmMexMeat();
+  rndmITLCheese();
+  rndmItlSauce();
+}
+
+function rndmSix() {
+  rndmMexSauce();
+  rndmITLCheese();
+  rndmItlStarch();
+  rndmItlMeat();
+}
+function rndmSeven() {
+  rndmMEXCheese();
+  rndmMexSauce();
+  rndmMexStarch();
+  rndmItlMeat();
+}
+function rndmEight() {
+  rndmMexSauce();
+  rndmMexStarch();
+  rndmITLCheese();
+  rndmItlMeat();
+}
+function rndmNine() {
+  rndmMEXCheese();
+  rndmMexMeat();
+  rndmItlSauce();
+  rndmItlStarch();
 }
